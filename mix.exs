@@ -22,7 +22,7 @@ defmodule NervesSystemVultr.Mixfile do
 
   defp deps do
     [{:nerves, "~> 0.5", runtime: false },
-     {:nerves_system_br, "~> 0.10.0", runtime: false },
+     {:nerves_system_br, "~> 0.12.0", runtime: false },
      {:nerves_toolchain_x86_64_unknown_linux_gnu, "~> 0.10.0", runtime: false}]
   end
 
