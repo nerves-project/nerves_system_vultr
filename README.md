@@ -20,6 +20,9 @@ installer, see
 [nerves_vultr_loader](https://github.com/fhunleth/fhunleth-buildroot-experiments/tree/master/board/nerves_vultr_loader).
 Instructions TBD.
 
+Please contact me about this if you're really interested in it. I don't
+maintain it, and unless you really dig through the code, it's not going
+to be obvious how it works. I'm happy to help if you're really interested.
 
 ## Installation
 
