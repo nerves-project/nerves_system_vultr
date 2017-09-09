@@ -3,7 +3,7 @@ use Mix.Config
 version =
   Path.join(__DIR__, "VERSION")
   |> File.read!
-  |> String.strip
+  |> String.trim
 
 pkg = :nerves_system_vultr
 
@@ -16,13 +16,14 @@ config pkg, :nerves_env,
   ],
   platform: Nerves.System.BR,
   platform_config: [
-    defconfig: "nerves_defconfig",
+    defconfig: "nerves_defconfig"
   ],
   checksum: [
     "nerves_defconfig",
-    "rootfs-additions",
-    "linux-4.4.defconfig",
+    "rootfs_overlay",
+    "linux-4.9.defconfig",
     "fwup.conf",
+    "grub.cfg",
     "post-createfs.sh",
     "VERSION"
   ]

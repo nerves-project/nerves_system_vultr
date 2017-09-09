@@ -3,12 +3,12 @@ defmodule NervesSystemVultr.Mixfile do
 
   @version Path.join(__DIR__, "VERSION")
     |> File.read!
-    |> String.strip
+    |> String.trim
 
   def project do
     [app: :nerves_system_vultr,
      version: @version,
-     elixir: "~> 1.3",
+     elixir: "~> 1.4",
      compilers: Mix.compilers ++ [:nerves_package],
      description: description(),
      package: package(),
@@ -21,9 +21,11 @@ defmodule NervesSystemVultr.Mixfile do
   end
 
   defp deps do
-    [{:nerves, "~> 0.5", runtime: false },
-     {:nerves_system_br, "~> 0.12.0", runtime: false },
-     {:nerves_toolchain_x86_64_unknown_linux_gnu, "~> 0.10.0", runtime: false}]
+    [
+      {:nerves, "~> 0.7", runtime: false },
+      {:nerves_system_br, "~> 0.13.7", runtime: false },
+      {:nerves_toolchain_x86_64_unknown_linux_gnu, "~> 0.10.0", runtime: false}
+    ]
   end
 
   defp description do
@@ -33,9 +35,9 @@ defmodule NervesSystemVultr.Mixfile do
   end
 
   defp package do
-    [maintainers: ["Frank Hunleth", "Justin Schneck"],
+    [maintainers: ["Frank Hunleth"],
      files: ["LICENSE", "mix.exs", "nerves_defconfig", "nerves.exs", "README.md",
-             "VERSION", "rootfs-additions", "linux-4.4.defconfig",
+             "VERSION", "rootfs_overlay", "linux-4.9.defconfig", "grub.cfg",
              "post-createfs.sh"],
      licenses: ["Apache 2.0"],
      links: %{"Github" => "https://github.com/fhunleth/nerves_system_vultr"}]
