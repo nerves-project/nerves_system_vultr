@@ -26,6 +26,13 @@ cp $BINARIES_DIR/grubenv_b $BINARIES_DIR/grubenv_b_valid
 grub-editenv $BINARIES_DIR/grubenv_b_valid set booted_once=1
 grub-editenv $BINARIES_DIR/grubenv_b_valid set validated=1
 
+# Copy MBR boot code boot.img
+cp $HOST_DIR/usr/lib/grub/i386-pc/boot.img $BINARIES_DIR
+
+# UDev Mods
+# Remove rules to enforce predictable net names
+rm -f $TARGET_DIR/lib/udev/rules.d/75-net-description.rules
+
 # Remove the Buildroot-generated grub.cfg so avoid confusion.
 # We put our grub in the FAT filesystem at the beginning of the
 # disk so that it exists across firmware updates.

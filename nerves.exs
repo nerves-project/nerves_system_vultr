@@ -24,6 +24,7 @@ config pkg, :nerves_env,
     "linux-4.9.defconfig",
     "fwup.conf",
     "grub.cfg",
+    "post-build.sh",
     "post-createfs.sh",
     "VERSION"
   ]
