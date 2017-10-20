@@ -23,8 +23,8 @@ defmodule NervesSystemVultr.Mixfile do
   defp deps do
     [
       {:nerves, "~> 0.7", runtime: false },
-      {:nerves_system_br, "~> 0.13", runtime: false },
-      {:nerves_toolchain_x86_64_unknown_linux_gnu, "~> 0.10", runtime: false}
+      {:nerves_system_br, "~> 0.14", runtime: false},
+      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 0.11.0", runtime: false}
     ]
   end
 
@@ -37,7 +37,7 @@ defmodule NervesSystemVultr.Mixfile do
   defp package do
     [maintainers: ["Frank Hunleth"],
      files: ["LICENSE", "mix.exs", "nerves_defconfig", "nerves.exs", "README.md",
-             "VERSION", "rootfs_overlay", "linux-4.9.defconfig", "grub.cfg",
+             "VERSION", "rootfs_overlay", "linux-4.11.defconfig", "grub.cfg",
              "post-createfs.sh"],
      licenses: ["Apache 2.0"],
      links: %{"Github" => "https://github.com/fhunleth/nerves_system_vultr"}]
