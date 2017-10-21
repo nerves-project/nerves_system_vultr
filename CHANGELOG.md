@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.1
+
+  * Fix up toolchain references
+
 ## v0.2.0
 
   * Switch from glibc to muslc to reduce image size
