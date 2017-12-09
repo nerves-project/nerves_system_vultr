@@ -1,16 +1,18 @@
 defmodule NervesSystemVultr.Mixfile do
   use Mix.Project
 
+  @app :nerves_system_vultr
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
 
   def project do
     [
-      app: :nerves_system_vultr,
+      app: @app,
       version: @version,
       elixir: "~> 1.4",
       compilers: Mix.compilers() ++ [:nerves_package],
+      nerves_package: nerves_package(),
       description: description(),
       package: package(),
       deps: deps(),
@@ -22,11 +24,26 @@ defmodule NervesSystemVultr.Mixfile do
     []
   end
 
+  def nerves_package do
+    [
+      type:  :system,
+      artifact_url: [
+        "https://github.com/fhunleth/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz"
+      ],
+      platform: Nerves.System.BR,
+      platform_config: [
+        defconfig: "nerves_defconfig"
+      ],
+      checksum: package_files()
+    ]
+  end
+
   defp deps do
     [
-      {:nerves, "~> 0.7", runtime: false},
-      {:nerves_system_br, "~> 0.14", runtime: false},
-      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 0.11.0", runtime: false}
+      {:nerves, "~> 0.8", runtime: false},
+      {:nerves_system_br, "~> 0.15.1", runtime: false},
+      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 0.12.1", runtime: false},
+      {:nerves_system_linter, "~> 0.2.2", runtime: false}
     ]
   end
 
@@ -39,20 +56,24 @@ defmodule NervesSystemVultr.Mixfile do
   defp package do
     [
       maintainers: ["Frank Hunleth"],
-      files: [
-        "LICENSE",
-        "mix.exs",
-        "nerves_defconfig",
-        "nerves.exs",
-        "README.md",
-        "VERSION",
-        "rootfs_overlay",
-        "linux-4.11.defconfig",
-        "grub.cfg",
-        "post-createfs.sh"
-      ],
+      files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/fhunleth/nerves_system_vultr"}
+      links: %{"Github" => "https://github.com/fhunleth/#{@app}"}
+    ]
+  end
+
+  defp package_files do
+    [
+      "LICENSE",
+      "mix.exs",
+      "nerves_defconfig",
+      "README.md",
+      "VERSION",
+      "rootfs_overlay",
+      "fwup.conf",
+      "linux-4.11.defconfig",
+      "grub.cfg",
+      "post-createfs.sh"
     ]
   end
 end
