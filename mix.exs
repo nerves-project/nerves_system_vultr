@@ -1,4 +1,4 @@
-defmodule NervesSystemVultr.Mixfile do
+defmodule NervesSystemVultr.MixProject do
   use Mix.Project
 
   @app :nerves_system_vultr
