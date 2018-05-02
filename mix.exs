@@ -16,7 +16,8 @@ defmodule NervesSystemVultr.MixProject do
       description: description(),
       package: package(),
       deps: deps(),
-      aliases: ["deps.precompile": ["nerves.env", "deps.precompile"]]
+      aliases: [loadconfig: [&bootstrap/1]],
+      docs: [extras: ["README.md"], main: "readme"]
     ]
   end
 
@@ -24,11 +25,17 @@ defmodule NervesSystemVultr.MixProject do
     []
   end
 
-  def nerves_package do
+  defp bootstrap(args) do
+    System.put_env("MIX_TARGET", "vultr")
+    Application.start(:nerves_bootstrap)
+    Mix.Task.run("loadconfig", args)
+  end
+
+  defp nerves_package do
     [
-      type:  :system,
-      artifact_url: [
-        "https://github.com/fhunleth/#{@app}/releases/download/v#{@version}/#{@app}-v#{@version}.tar.gz"
+      type: :system,
+      artifact_sites: [
+        {:github_releases, "fhunleth/#{@app}"}
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -40,10 +47,11 @@ defmodule NervesSystemVultr.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 0.8", runtime: false},
-      {:nerves_system_br, "~> 0.15.1", runtime: false},
-      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 0.12.1", runtime: false},
-      {:nerves_system_linter, "~> 0.2.2", runtime: false}
+      {:nerves, "~> 1.0", runtime: false},
+      {:nerves_system_br, "~> 1.0.0", runtime: false},
+      {:nerves_toolchain_x86_64_unknown_linux_musl, "~> 1.0.0", runtime: false},
+      {:nerves_system_linter, "~> 0.3.0", runtime: false},
+      {:ex_doc, "~> 0.18", only: :dev}
     ]
   end
 
