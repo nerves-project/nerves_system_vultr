@@ -63,7 +63,6 @@ defmodule NervesSystemVultr.MixProject do
 
   defp package do
     [
-      maintainers: ["Frank Hunleth"],
       files: package_files(),
       licenses: ["Apache 2.0"],
       links: %{"Github" => "https://github.com/fhunleth/#{@app}"}
@@ -72,16 +71,19 @@ defmodule NervesSystemVultr.MixProject do
 
   defp package_files do
     [
+      "fwup_include",
+      "rootfs_overlay",
+      "CHANGELOG",
+      "fwup.conf",
+      "grub.cfg",
       "LICENSE",
+      "linux-4.18.defconfig",
       "mix.exs",
       "nerves_defconfig",
+      "post-createfs.sh",
+      "post-build.sh",
       "README.md",
-      "VERSION",
-      "rootfs_overlay",
-      "fwup.conf",
-      "linux-4.11.defconfig",
-      "grub.cfg",
-      "post-createfs.sh"
+      "VERSION"
     ]
   end
 end
