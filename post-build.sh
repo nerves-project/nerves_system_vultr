@@ -18,3 +18,6 @@ rm -fr $TARGET_DIR/boot/grub
 
 # Run the common post-build processing for nerves
 $BR2_EXTERNAL_NERVES_PATH/board/nerves-common/post-build.sh $TARGET_DIR
+
+# Copy the fwup includes to the images dir
+cp -rf $NERVES_DEFCONFIG_DIR/fwup_include $BINARIES_DIR
