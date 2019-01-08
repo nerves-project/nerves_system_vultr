@@ -35,7 +35,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "fhunleth/#{@app}"}
+        {:github_releases, "nerves-project/#{@app}"}
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -65,7 +65,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/fhunleth/#{@app}"}
+      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
     ]
   end
 
