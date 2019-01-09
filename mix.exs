@@ -35,7 +35,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "fhunleth/#{@app}"}
+        {:github_releases, "nerves-project/#{@app}"}
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -48,7 +48,7 @@ defmodule NervesSystemVultr.MixProject do
   defp deps do
     [
       {:nerves, "~> 1.0", runtime: false},
-      {:nerves_system_br, "1.6.0", runtime: false},
+      {:nerves_system_br, "1.6.5", runtime: false},
       {:nerves_toolchain_x86_64_unknown_linux_musl, "1.1.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
       {:ex_doc, "~> 0.18", only: :dev}
@@ -65,7 +65,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/fhunleth/#{@app}"}
+      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
     ]
   end
 
@@ -73,7 +73,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       "fwup_include",
       "rootfs_overlay",
-      "CHANGELOG",
+      "CHANGELOG.md",
       "fwup.conf",
       "grub.cfg",
       "LICENSE",
