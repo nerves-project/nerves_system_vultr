@@ -10,7 +10,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       app: @app,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
       description: description(),
@@ -26,7 +26,7 @@ defmodule NervesSystemVultr.MixProject do
   end
 
   defp bootstrap(args) do
-    System.put_env("MIX_TARGET", "vultr")
+    set_target()
     Application.start(:nerves_bootstrap)
     Mix.Task.run("loadconfig", args)
   end
@@ -85,5 +85,13 @@ defmodule NervesSystemVultr.MixProject do
       "README.md",
       "VERSION"
     ]
+  end
+
+  defp set_target() do
+    if function_exported?(Mix, :target, 1) do
+      apply(Mix, :target, [:target])
+    else
+      System.put_env("MIX_TARGET", "target")
+    end
   end
 end
