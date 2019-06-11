@@ -42,6 +42,11 @@ cp $NERVES_DEFCONFIG_DIR/grub.cfg $BINARIES_DIR
 # Remove rules to enforce predictable net names
 rm -f $TARGET_DIR/lib/udev/rules.d/75-net-description.rules
 
+# Create the revert script for manually switching back to the previously
+# active firmware.
+mkdir -p $TARGET_DIR/usr/share/fwup
+NERVES_SYSTEM=$BASE_DIR $HOST_DIR/usr/bin/fwup -c -f $NERVES_DEFCONFIG_DIR/fwup-revert.conf -o $TARGET_DIR/usr/share/fwup/revert.fw
+
 # Run the common post-build processing for nerves
 $BR2_EXTERNAL_NERVES_PATH/board/nerves-common/post-build.sh $TARGET_DIR
 
