@@ -1,6 +1,7 @@
 defmodule NervesSystemVultr.MixProject do
   use Mix.Project
 
+  @github_organization "nerves-project"
   @app :nerves_system_vultr
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -35,7 +36,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        {:github_releases, "#{@github_organization}/#{@app}"}
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -65,7 +66,7 @@ defmodule NervesSystemVultr.MixProject do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"GitHub" => "https://github.com/#{@github_organization}/#{@app}"}
     ]
   end
 
