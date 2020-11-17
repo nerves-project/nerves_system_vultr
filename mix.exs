@@ -44,6 +44,7 @@ defmodule NervesSystemVultr.MixProject do
       artifact_sites: [
         {:github_releases, "#{@github_organization}/#{@app}"}
       ],
+      build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
       platform_config: [
         defconfig: "nerves_defconfig"
@@ -103,6 +104,14 @@ defmodule NervesSystemVultr.MixProject do
       "README.md",
       "VERSION"
     ]
+  end
+
+  defp build_runner_opts() do
+    if primary_site = System.get_env("BR2_PRIMARY_SITE") do
+      [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
+    else
+      []
+    end
   end
 
   defp set_target() do
