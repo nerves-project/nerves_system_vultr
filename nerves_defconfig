@@ -31,6 +31,7 @@ BR2_PACKAGE_E2FSPROGS=y
 # BR2_PACKAGE_E2FSPROGS_FSCK is not set
 BR2_PACKAGE_UNIXODBC=y
 BR2_PACKAGE_LIBMNL=y
+BR2_PACKAGE_LIBNL=y
 # BR2_TARGET_ROOTFS_TAR is not set
 BR2_TARGET_GRUB2=y
 BR2_TARGET_GRUB2_BUILTIN_MODULES="boot linux ext2 squash4 fat part_msdos normal biosdisk loadenv echo true test sleep"
