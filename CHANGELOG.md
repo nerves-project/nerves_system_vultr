@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.10.3
+
+This release includes a patch release update to
+[Buildroot 2020.08.2](http://lists.busybox.net/pipermail/buildroot/2020-November/296830.html).
+
+* Updated dependencies
+  * [nerves_system_br: bump to v1.13.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.13.5)
+  * [erlinit 1.9.0](https://github.com/nerves-project/erlinit/releases/tag/v1.9.0)
+
+* Improvements
+  * Switched source for built-in WiFi module firmware. This pulls in newer
+    firmware versions that were found to fix issues on the Raspberry Pi 4. It
+    may improve built-in WiFi on other Raspberry Pis.
+
 ## v0.10.2
 
 * Fixes
