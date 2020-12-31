@@ -99,18 +99,17 @@ defmodule NervesSystemVultr.MixProject do
       "linux-5.4.defconfig",
       "mix.exs",
       "nerves_defconfig",
-      "post-createfs.sh",
       "post-build.sh",
+      "post-createfs.sh",
       "README.md",
       "VERSION"
     ]
   end
 
   defp build_runner_opts() do
-    if primary_site = System.get_env("BR2_PRIMARY_SITE") do
-      [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
-    else
-      []
+    case System.get_env("BR2_PRIMARY_SITE") do
+      nil -> []
+      primary_site -> [make_args: ["BR2_PRIMARY_SITE=#{primary_site}"]]
     end
   end
 
