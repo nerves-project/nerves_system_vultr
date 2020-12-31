@@ -18,7 +18,7 @@ Nerves images created using this system first need to be install onto a Vultr
 server and then they can be upgraded using normal Nerves methods. For an
 installer, see
 [nerves_vultr_loader](https://github.com/fhunleth/fhunleth-buildroot-experiments/tree/master/board/nerves_vultr_loader).
-Instructions TBD.
+There are some basic instructions there.
 
 Please contact me about this if you're really interested in it. I don't
 maintain it, and unless you really dig through the code, it's not going
