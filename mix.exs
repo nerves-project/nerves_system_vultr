@@ -116,7 +116,7 @@ defmodule NervesSystemVultr.MixProject do
 
   defp build_runner_opts() do
     # Download source files first to get download errors right away.
-    [make_args: primary_site() ++ ["source", "all"]]
+    [make_args: primary_site() ++ ["source", "all", "legal-info"]]
   end
 
   defp primary_site() do
