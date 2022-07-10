@@ -12,6 +12,16 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.17.1
+
+* Fixes
+  * Fix a Buildroot configuration error that caused a non-Nerves GCC 11.2
+    toolchain to be used instead of the Nerves GCC 11.3 toolchain. Due to an ABI
+    difference, NIFs and ports wouldn't work.
+
+* Updated dependencies
+  * Linux 5.4.204
+
 ## v0.17.0
 
 This release updates to Buildroot 2022.05 and uses GCC 11.3 (from GCC 10.3).
