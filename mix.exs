@@ -102,7 +102,7 @@ defmodule NervesSystemVultr.MixProject do
       "fwup_include",
       "rootfs_overlay",
       "CHANGELOG.md",
-      "fwup-revert.conf",
+      "fwup-ops.conf",
       "fwup.conf",
       "grub.cfg",
       "LICENSE",
