@@ -12,6 +12,21 @@ follows:
    releases, and Linux kernel updates. They're also made to fix bugs and add
    features to the build infrastructure.
 
+## v0.26.0
+
+This is a major Erlang and Buildroot update.
+
+Please see the [nerves_system_br v1.29.0 release notes](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.29.0)
+for upgrade instructions if you've forked this system.
+
+* Changes
+  * Switch to ops.fw for handling revert firmware and similar
+
+* Updated dependencies
+  * [nerves_system_br v1.29.1](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.29.1)
+  * [Buildroot 2024.08.2](https://lore.kernel.org/buildroot/871pzex7gn.fsf@dell.be.48ers.dk/T/)
+  * Linux 6.6.56
+
 ## v0.25.1
 
 This is a security/bug fix update.
