@@ -1,5 +1,8 @@
 # Vultr Cloud Server
-[![Build Status](https://travis-ci.org/nerves-project/nerves_system_vultr.png?branch=master)](https://travis-ci.org/nerves-project/nerves_system_vultr)
+
+[![Hex version](https://img.shields.io/hexpm/v/nerves_system_vultr.svg "Hex version")](https://hex.pm/packages/nerves_system_vultr)
+[![CI](https://github.com/nerves-project/nerves_system_vultr/actions/workflows/ci.yml/badge.svg)](https://github.com/nerves-project/nerves_system_vultr/actions/workflows/ci.yml)
+[![REUSE status](https://api.reuse.software/badge/github.com/nerves-project/nerves_system_vultr)](https://api.reuse.software/info/github.com/nerves-project/nerves_system_vultr)
 
 This is the base Nerves System configuration for a Vultr cloud server. It is close to a generic x86_64
 configuration and should be useful for other cloud server images.
