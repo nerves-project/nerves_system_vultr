@@ -12,7 +12,7 @@ configuration and should be useful for other cloud server images.
 | CPU                  | Intel                           |
 | Memory               | 512 MB+ DRAM                    |
 | Storage              | Virtio (/dev/vda)               |
-| Linux kernel         | 6.6                             |
+| Linux kernel         | 6.12                            |
 | IEx terminal         | VNC display - tty0              |
 | Hardware I/O         | None                            |
 | Ethernet             | Yes                             |
