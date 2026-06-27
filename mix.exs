@@ -109,7 +109,7 @@ defmodule NervesSystemVultr.MixProject do
       "fwup.conf",
       "grub.cfg",
       "LICENSES/*",
-      "linux-6.12.defconfig",
+      "linux-6.18.defconfig",
       "mix.exs",
       "nerves_defconfig",
       "post-build.sh",
